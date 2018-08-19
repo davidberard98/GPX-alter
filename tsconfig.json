@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "outFile": "main.js"
+  },
+  "files": [
+    "Point.ts",
+    "main.ts"
+  ]
+}
