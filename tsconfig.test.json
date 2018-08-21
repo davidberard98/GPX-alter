@@ -4,8 +4,10 @@
   "files": [
     "src/Point.ts",
     "src/Segment.ts",
+    "src/Limits.ts",
     "src/main.ts",
     "spec/Segment.spec.ts",
+    "spec/Limits.spec.ts",
     "spec/Point.spec.ts"
   ]
 }

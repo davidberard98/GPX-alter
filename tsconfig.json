@@ -6,6 +6,7 @@
   "files": [
     "src/Point.ts",
     "src/Segment.ts",
+    "src/Limits.ts",
     "src/main.ts"
   ]
 }

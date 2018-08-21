@@ -19,15 +19,16 @@ export class Point {
     let timeString:string = trkpt.getElementsByTagName("time")[0].textContent;
     this.time = new Date(timeString);
 
-    let tpx:Element = trkpt.getElementsByTagName("gpxtpx:TrackPointExtension")[0];
-    console.log(trkpt.getElementsByTagNameNS);
-    //console.log(tpx);
+    let tpx:Element = trkpt.getElementsByTagName("gpxtpxxTrackPointExtension")[0];
+    console.log(tpx);
     if(tpx) {
       this.gpxtpx = {}
-      let children:any = tpx.children;
-      //console.log(tpx.children);
-      for(let i:number = 0;i<children.length;++i) {
-        this.gpxtpx[children[i].tagName] = parseFloat(children[i].textContent);
+      for(let child = tpx.firstElementChild; child; child = child.nextElementSibling) {
+        let tagName:string = child.tagName;
+        if(tagName.substring(0, 7) === 'gpxtpxx') {
+          tagName = tagName.substring(7, tagName.length);
+          this.gpxtpx[tagName] = parseFloat(child.textContent);
+        }
       }
     }
   }
