@@ -14,3 +14,6 @@ datapoint.o: datapoint.cpp
 
 squish.o: squish.cpp
 	g++ -c squish.cpp -o squish.o
+
+clean:
+	rm -rf *.o squish reverse

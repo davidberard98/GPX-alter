@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="include/system-production.js"></script>
+  <script type="text/javascript" src="bundle.js"></script>
+  <script type="text/javascript">
+/*
+    System.config({
+      //baseUrl: "./",
+      bundles: {
+        "main.js": ['main']
+      }
+    }); */
+    System.import("main");
+  </script>
 </head>
 <body>
+  <div id="sandbox"></div>
 </body>
 </html>

@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "module": "system",
-    "outFile": "bundle.js"
   },
   "files": [
     "src/Point.ts",
     "src/Segment.ts",
-    "src/main.ts"
+    "src/main.ts",
+    "spec/Segment.spec.ts"
   ]
 }
