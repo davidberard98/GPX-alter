@@ -1,7 +1,11 @@
 {
   "devDependencies": {
     "@types/jasmine": "^2.8.8",
+    "dom-parser": "^0.1.5",
     "typescript": "^3.0.1"
   },
-  "scripts": {"test": "tsc -p tsconfig.test.json && jasmine"}
+  "scripts": {
+    "test": "tsc -p tsconfig.test.json && jasmine"
+  },
+  "dependencies": {}
 }

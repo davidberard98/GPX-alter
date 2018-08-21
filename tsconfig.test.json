@@ -5,6 +5,7 @@
     "src/Point.ts",
     "src/Segment.ts",
     "src/main.ts",
-    "spec/Segment.spec.ts"
+    "spec/Segment.spec.ts",
+    "spec/Point.spec.ts"
   ]
 }
