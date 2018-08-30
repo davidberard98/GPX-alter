@@ -6,8 +6,7 @@ export class Drawer {
   width:number;
   height:number;
 
-  constructor(finalCanvas:Element);
-  constructor(finalCanvas:any) {
+  constructor(finalCanvas:any = document.getElementById('canvas')) {
     this.finalCanvas = finalCanvas;
     if(finalCanvas != null && finalCanvas.getContext != null) {
       this.finalCtx = finalCanvas.getContext('2d');
@@ -15,7 +14,10 @@ export class Drawer {
       this.width = finalCanvas.width;
       this.height = finalCanvas.height;
       this.canvas.width = this.width;
-      this.canvas.width = this.height;
+      this.canvas.height = this.height;
+      this.ctx = this.canvas.getContext('2d');
+    } else {
+      console.log("Cannot find finalCanvas");
     }
   }
 
@@ -27,12 +29,17 @@ export class Drawer {
     this.ctx.beginPath();
   }
 
-  moveTo(x: number, y: number): void {
-    this.ctx.moveTo(x, y);
+  moveTo(pt:[number, number]): void {
+    this.ctx.moveTo(pt[0], pt[1]);
   }
 
-  lineTo(x: number, y: number): void {
-    this.ctx.lineTo(x, y);
+  lineTo(pt:[number, number]): void {
+    this.ctx.lineTo(pt[0], pt[1]);
+    console.log(pt);
+  }
+
+  setColor(color:string): void {
+    this.ctx.strokeStyle = color;
   }
 
   stroke():void {
@@ -40,5 +47,3 @@ export class Drawer {
   }
 
 }
-
-export let drawer:Drawer = new Drawer(document.getElementById("canvas"));

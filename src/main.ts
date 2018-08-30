@@ -26,7 +26,10 @@ function testGpxParse(): void {
 }
 
 function testBasicRender(): void {
-  setupUploadButton(manager.onNewUpload);
+  setupUploadButton(function(e:any) {
+    // necessary to maintain correct "this" in manager.onNewUpload()
+    manager.onNewUpload(e);
+  });
 }
 
 window.onload = testBasicRender;

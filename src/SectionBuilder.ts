@@ -18,6 +18,9 @@ export class SectionBuilder {
   add(p:Point):void {
     this.latLim.add(p.lat);
     this.lonLim.add(p.lon);
+    if(p.lon+119 > 1 || p.lon+119 < 0) {
+      console.log(p.lon);
+    }
   }
   build():Section {
     let result:Section = new Section();
@@ -25,8 +28,8 @@ export class SectionBuilder {
     result.height = this.height;
     result.topLat = this.latLim.maximum;
     result.leftLon = this.lonLim.minimum;
+    //console.log("lon range " + this.lonLim.range()+ " dfl " + result.getHeightDegrees(this.lonLim.range()));
     
-    result.heightDegrees = this.latLim.range();
     const degreesFromLon:number = result.getHeightDegrees(this.lonLim.range());
     result.heightDegrees = Math.max(this.latLim.range(), degreesFromLon);
     return result;

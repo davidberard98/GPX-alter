@@ -1,8 +1,8 @@
 export class Limits {
   minimum: number;
   maximum: number;
-  constructor(minimum_init: number = Number.MAX_VALUE
-    , maximum_init: number = Number.MIN_VALUE) {
+  constructor(minimum_init: number = Number.MAX_VALUE/4
+    , maximum_init: number = -(Number.MAX_VALUE/4)) {
     this.minimum = minimum_init;
     this.maximum = maximum_init;
   }

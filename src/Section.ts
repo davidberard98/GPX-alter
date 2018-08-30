@@ -40,7 +40,7 @@ export class Section {
   //
   convert(p:Point):[number, number] {
     const x: number = (p.lon-this.leftLon)*this.width/this.widthDegrees;
-    const y: number = (p.lat-this.topLat)*this.height/this.heightDegrees;
+    const y: number = (this.topLat-p.lat)*this.height/this.heightDegrees;
     return [x, y];
   }
 };

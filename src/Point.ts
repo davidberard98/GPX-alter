@@ -20,7 +20,6 @@ export class Point {
     this.time = new Date(timeString);
 
     let tpx:Element = trkpt.getElementsByTagName("gpxtpxxTrackPointExtension")[0];
-    console.log(tpx);
     if(tpx) {
       this.gpxtpx = {}
       for(let child = tpx.firstElementChild; child; child = child.nextElementSibling) {
