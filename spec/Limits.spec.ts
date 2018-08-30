@@ -51,4 +51,12 @@ describe("Limits", function () {
       l.add(10);
       expect(l.avg()).toBe(6);
     });
+    it("gets the right range", function() {
+      let l = new Limits();
+      l.add(2);
+      l.add(4);
+      expect(l.range()).toBe(2);
+      l.add(10);
+      expect(l.range()).toBe(8);
+    });
 });

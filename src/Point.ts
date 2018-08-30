@@ -7,8 +7,8 @@ export class Point {
 
   constructor(trkpt: null);
   constructor(trkpt: Element);
-  constructor(trkpt: any) { 
-    if(typeof trkpt == 'object') {
+  constructor(trkpt: any = null) { 
+    if(trkpt != null) {
       this.readXml(trkpt);
     }
   }

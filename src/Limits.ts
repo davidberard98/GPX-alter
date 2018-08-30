@@ -20,4 +20,7 @@ export class Limits {
   avg(): number {
     return (this.minimum+this.maximum)/2;
   }
+  range(): number {
+    return (this.minimum < this.maximum ? this.maximum-this.minimum : 0);
+  }
 }

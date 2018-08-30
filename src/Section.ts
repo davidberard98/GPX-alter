@@ -15,6 +15,17 @@ export class Section {
     const avgLat:number = this.topLat-heightDegrees/2;
     return heightDegrees*this.width/(Math.cos(avgLat*Math.PI/180)*this.height);
   }
+  getHeightDegrees(widthDegrees:number): number {
+    // binary search
+    let minDeg:number = 0;
+    let maxDeg:number = 170;
+    for(let i = 0;i<1000;++i) {
+      const wd:number = this.getWidthDegrees((minDeg+maxDeg)/2);
+      if(wd < widthDegrees) minDeg = wd;
+      else maxDeg = wd;
+    }
+    return (minDeg+maxDeg)/2;
+  }
   get avgLat():number {
     return this.topLat-this.heightDegrees/2;
   }
@@ -23,11 +34,6 @@ export class Section {
   }
     /*
   set widthDegrees(deg:number):void {
-    let minDeg = 0;
-    let maxDeg = 170;
-    for(let i = 0;i<1000;++i) {
-      
-    }
   } */
   // TODO: add the functionality for building the bounding box..
   //
