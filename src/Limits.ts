@@ -17,4 +17,7 @@ export class Limits {
       this.maximum = (x.maximum > this.maximum ? x.maximum : this.maximum);
     }
   }
+  avg(): number {
+    return (this.minimum+this.maximum)/2;
+  }
 }

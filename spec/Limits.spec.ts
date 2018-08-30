@@ -43,4 +43,12 @@ describe("Limits", function () {
       expect(l1.minimum).toBe(2);
       expect(l1.maximum).toBe(2);
     });
+    it("correctly averages", function() {
+      let l = new Limits();
+      l.add(2);
+      l.add(4);
+      expect(l.avg()).toBe(3);
+      l.add(10);
+      expect(l.avg()).toBe(6);
+    });
 });

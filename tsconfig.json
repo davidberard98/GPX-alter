@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
     "module": "system",
-    "outFile": "bundle.js"
+    "outFile": "bundle.js",
+    "target": "ES5"
   },
   "files": [
     "src/Point.ts",
+    "src/Section.ts",
+    "src/Drawer.ts",
     "src/Segment.ts",
     "src/Limits.ts",
     "src/main.ts"

@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
+    "target": "ES5"
   },
   "files": [
     "src/Point.ts",
+    "src/Drawer.ts",
     "src/Segment.ts",
+    "src/Section.ts",
     "src/Limits.ts",
     "src/main.ts",
     "spec/Segment.spec.ts",
+    "spec/Section.spec.ts",
     "spec/Limits.spec.ts",
     "spec/Point.spec.ts"
   ]
