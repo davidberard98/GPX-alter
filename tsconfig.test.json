@@ -9,6 +9,7 @@
     "src/Section.ts",
     "src/SectionBuilder.ts",
     "src/Limits.ts",
+    "src/Manager.ts",
     "src/main.ts",
     "spec/Segment.spec.ts",
     "spec/Section.spec.ts",

@@ -11,6 +11,7 @@
     "src/SectionBuilder.ts",
     "src/Drawer.ts",
     "src/Segment.ts",
+    "src/Manager.ts",
     "src/main.ts"
   ]
 }

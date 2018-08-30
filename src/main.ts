@@ -1,9 +1,19 @@
 import {Segment} from './Segment'
+import { manager } from './Manager'
 
-function testGpxParse(): void {
+let canvas = document.getElementById("canvas");
+
+function setupUploadButton(onchange:(() => void)|((e:any)=>void)):void {
   let btn = document.createElement("input");
   btn.setAttribute("type", "file");
-  btn.addEventListener('change', function() {
+  btn.addEventListener('change', onchange);
+
+  let sandbox = document.getElementById("sandbox");
+  sandbox.appendChild(btn);
+}
+
+function testGpxParse(): void {
+  setupUploadButton(function() {
     let s: Segment = new Segment();
     let f = this.files[0];
     let reader = new FileReader();
@@ -13,9 +23,10 @@ function testGpxParse(): void {
     };
     reader.readAsText(f);
   });
-
-  let sandbox = document.getElementById("sandbox");
-  sandbox.appendChild(btn);
 }
 
-window.onload = testGpxParse;
+function testBasicRender(): void {
+  setupUploadButton(manager.onNewUpload);
+}
+
+window.onload = testBasicRender;

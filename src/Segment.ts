@@ -1,7 +1,8 @@
 import { Point } from './Point'
 export class Segment {
-  private points: Array<Point>;
+  points: Array<Point>;
   private title: string;
+  private color: string;
   constructor() {
     this.points = new Array();
   }
